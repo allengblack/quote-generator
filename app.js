@@ -14,11 +14,15 @@ var HttpClient = function() {
     }
 }
 
+console.log("I reached here.");
+
 function newQuote() {
+    $("#quote_text").html(quote);
+
     console.log("I broke after here.");
+    
     var client = new HttpClient();
-    client.get('http://some/thing?with=arguments', function(response) {
-        // do something with response
+    client.get(theUrl, function(response) {
         console.log(response);
     });
 
@@ -26,5 +30,5 @@ function newQuote() {
     // $.get("https://talaikis.com/api/quotes/","/random/", success, 'json');
     //     quote = data.quote;
 
-    // $("#quote_text").html(quote);
+    
 }
